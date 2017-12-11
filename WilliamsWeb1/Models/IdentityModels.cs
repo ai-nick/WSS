@@ -26,7 +26,7 @@ namespace WilliamsWeb1.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("SQLAzureConnection", throwIfV1Schema: false)
+            : base("mydb", throwIfV1Schema: false)
         {
         }
 
