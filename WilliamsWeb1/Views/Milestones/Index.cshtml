@@ -1,0 +1,95 @@
+﻿@model IEnumerable<WilliamsWeb1.Models.Milestone>
+
+@{
+    ViewBag.Title = "Milestone Index";
+}
+
+<h2>Index</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.estimatedHours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hoursWorked)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hoursPaid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AmountDue)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AmountPaid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ParentID)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.estimatedHours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.hoursWorked)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.hoursPaid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AmountDue)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AmountPaid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ParentID)
+        </td>
+        <td>
+            @Html.ActionLink("Details", "Details", new { id = item.milestoneID })
+    @if (Context.User.IsInRole("Admin"))
+    {
+            @Html.ActionLink("Delete", "Delete", new { id = item.milestoneID })
+        <br />
+            @Html.ActionLink("Edit", "Edit", new { id = item.milestoneID })
+    }
+        </td>
+    </tr>
+}
+
+</table>
+<div>
+    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+        <input type="hidden" name="cmd" value="_s-xclick">
+        <input type="hidden" name="hosted_button_id" value="CHHKLEQMMQ8HA">
+        <table>
+            <tr><td><input type="hidden" name="on0" value="Rate for Project Type">Rate for Project Type</td></tr>
+            <tr>
+                <td>
+                    <select name="os0">
+                        <option value="Website">Website $40.00 USD</option>
+                        <option value="Mobile App">Mobile App $45.00 USD</option>
+                        <option value="Misc.">Misc. $50.00 USD</option>
+                    </select>
+                </td>
+            </tr>
+            <tr><td><input type="hidden" name="on1" value="Milestone Name">Milestone Name</td></tr>
+            <tr><td><input type="text" name="os1" maxlength="200"></td></tr>
+        </table>
+        <input type="hidden" name="currency_code" value="USD">
+        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+        <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+    </form>
+
+</div>

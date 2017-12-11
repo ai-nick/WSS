@@ -1,0 +1,34 @@
+﻿@model WilliamsWeb1.Models.Chats
+@{
+    ViewBag.Title = "Add Message";
+}
+
+<div class="container">
+
+@using (Html.BeginForm())
+{
+    <br />
+    @Html.AntiForgeryToken()
+    <div>
+
+@foreach (var item in Model.Messages.ToList())
+{
+    @Html.DisplayFor(modelItem => item.Sender)
+    @Html.Label(" : ")
+    <br/>
+    @Html.DisplayFor(modelItem => item.mess)
+    <p></p>
+    <br/>
+}
+
+    </div>
+    <br />
+    <textarea name="thisMessage"></textarea>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Send" class="btn btn-default" />
+            </div>
+        </div>
+}
+</div>
+

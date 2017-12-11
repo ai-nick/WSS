@@ -1,0 +1,26 @@
+﻿@model WilliamsWeb1.Models.Chats
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Chats</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Client.PaymentMethod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Client.PaymentMethod)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ChatId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

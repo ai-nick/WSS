@@ -15,14 +15,14 @@ namespace WilliamsWeb1.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Please read the following to get a brief overview of how to use the site to start a project with me!";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "If you don't want to use the sites messenger you can also contact me via the following channels.";
 
             return View();
         }

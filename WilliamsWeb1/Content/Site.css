@@ -15,7 +15,13 @@
 .dl-horizontal dt {
     white-space: normal;
 }
-
+.pastelBack{
+    background-image: url('images/newbg.jpg');
+    background-size:cover;
+}
+.shadyFigure{
+    box-shadow: 5px 5px 5px 5px #888888;
+}
 /* Set width on the form input elements since they're 100% wide by default */
 input,
 select,
