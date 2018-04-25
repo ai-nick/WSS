@@ -38,7 +38,7 @@ namespace WilliamsWeb1.Migrations
                 manager.Create(role);
             }
 
-            if (!context.Users.Any(u => u.UserName == "nickwilliamslovescode@gmail.com"))
+            if (!context.Users.Any(u => u.UserName == ""))
             {
                 var store = new UserStore<ApplicationUser>(context);
                 var manager = new UserManager<ApplicationUser>(store);
