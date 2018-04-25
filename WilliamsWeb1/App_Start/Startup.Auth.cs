@@ -85,10 +85,10 @@ namespace WilliamsWeb1
                 //Here we create a Admin super user who will maintain the website                   
 
                 var user = new ApplicationUser();
-                user.UserName = "nicholasWilliamsAdmin";
-                user.Email = "nickwilliamslovescode@gmail.com";
+                user.UserName = "";
+                user.Email = "";
 
-                string userPWD = "OliviaTheo1123!";
+                string userPWD = "";
 
                 var chkUser = UserManager.Create(user, userPWD);
 
