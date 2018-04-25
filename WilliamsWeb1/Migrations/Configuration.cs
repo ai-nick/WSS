@@ -42,9 +42,9 @@ namespace WilliamsWeb1.Migrations
             {
                 var store = new UserStore<ApplicationUser>(context);
                 var manager = new UserManager<ApplicationUser>(store);
-                var user = new ApplicationUser { UserName = "nickwilliamslovescode@gmail.com", Email = "nickwilliamslovescode@gmail.com" };
+                var user = new ApplicationUser { UserName = "", Email = "" };
 
-                manager.Create(user, "Olivia1213!");
+                manager.Create(user, "");
                 manager.AddToRole(user.Id, "admin");
             }
         }
